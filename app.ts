@@ -78,3 +78,25 @@ const greeting = (data: string | number): void => {
 const logging = (data: string | number): never => {
     throw new Error('Error')
 }
+interface AdultPerson {
+    name: string;
+    age: number;
+    isMarried: boolean;
+}
+interface RichPerson {
+    isRich: boolean;
+}
+type Mix = AdultPerson & RichPerson;
+
+class Bofamily implements AdultPerson, RichPerson {
+    name = "";
+    age = 0;
+    isMarried = false;
+    isRich = false;
+
+    constructor(name: string, age: number, isMarried: boolean) {
+        this.name = name,
+            this.age = age,
+            this.isMarried = isMarried;
+    }
+}
